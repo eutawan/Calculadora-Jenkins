@@ -2,7 +2,9 @@ pipeline{
     agent any
     stages{
         stage('Build'){
-            gut
+            steps{
+                bat 'mvn clean package -DskipTests=true'
+            }
         }
     }
 }
